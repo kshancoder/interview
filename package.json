@@ -6,6 +6,12 @@
     "./packages/**"
   ],
   "scripts": {
-    "ts": "yarn workspace @interview/typescript"
+    "ts": "yarn workspace @interview/typescript",
+    "react": "yarn workspace @interview/react"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
   }
 }
