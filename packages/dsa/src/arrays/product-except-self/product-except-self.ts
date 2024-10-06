@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/product-of-array-except-self/description/
 export function productExceptSelf(nums: number[]): number[] {
   let result = [];
   let current = 1;

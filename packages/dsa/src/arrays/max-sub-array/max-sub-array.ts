@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/maximum-subarray/description/
 export function maxSubArray(nums: number[]): number {
   let result = nums[0];
   let runningSum = nums[0];

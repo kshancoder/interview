@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/maximum-product-subarray/description/
 export function maxProductSubArray(nums: number[]): number {
   let result = nums[0];
   let current = 1;
