@@ -6,8 +6,14 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import hooksPlugin from "eslint-plugin-react-hooks";
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+  },
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
@@ -18,4 +24,9 @@ export default [
     rules: hooksPlugin.configs.recommended.rules,
   },
   eslintConfigPrettier,
+  {
+    rules: {
+      "prefer-const": 0,
+    },
+  },
 ];
