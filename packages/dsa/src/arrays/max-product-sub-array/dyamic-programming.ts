@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/maximum-product-subarray/description/
 export function maxProductSubArray(nums: number[]): number {
   let result = nums[0];
-  
+
   let positiveProduct = nums[0];
   let negativeProduct = nums[0];
 
@@ -29,5 +29,8 @@ export function maxProductSubArray(nums: number[]): number {
   return result;
 }
 
-let result = maxProductSubArray([4, 2, 3, 0, 4, 4]);
+let result = maxProductSubArray([-3, 2, -2, 2, -2, 5]);
+console.log(result);
+
+result = maxProductSubArray([4, 2, 3, 0, 4, 4]);
 console.log(result);
