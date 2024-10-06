@@ -1,17 +1,29 @@
 // https://leetcode.com/problems/maximum-product-subarray/description/
 export function maxProductSubArray(nums: number[]): number {
-  let currentMax = nums[0];
-  let currentMin = nums[0];
-
   let result = nums[0];
+  
+  let positiveProduct = nums[0];
+  let negativeProduct = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
-    let tempMax = currentMax;
+    let currentValue = nums[i];
 
-    currentMax = Math.max(nums[i], nums[i] * currentMax, nums[i] * currentMin);
-    currentMin = Math.min(nums[i], nums[i] * tempMax, nums[i] * currentMin);
+    let currentPositiveProduct = Math.max(
+      currentValue,
+      currentValue * positiveProduct,
+      currentValue * negativeProduct,
+    );
 
-    result = Math.max(currentMax, result);
+    let currentNegativeProduct = Math.min(
+      currentValue,
+      currentValue * positiveProduct,
+      currentValue * negativeProduct,
+    );
+
+    positiveProduct = currentPositiveProduct;
+    negativeProduct = currentNegativeProduct;
+
+    result = Math.max(result, positiveProduct);
   }
 
   return result;
